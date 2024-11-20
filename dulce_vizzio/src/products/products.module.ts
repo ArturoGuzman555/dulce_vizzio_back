@@ -6,7 +6,6 @@ import { ProductsRepository } from './products.repository';
 import { Products } from 'src/Entities/products.entity';
 import { Categories } from 'src/Entities/categories.entity';
 
-
 @Module({
   imports: [TypeOrmModule.forFeature([Products, Categories])],
   controllers: [ProductsController],
