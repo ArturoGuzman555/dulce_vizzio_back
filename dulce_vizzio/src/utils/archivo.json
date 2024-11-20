@@ -1,0 +1,97 @@
+[
+    {
+        "name": "Iphone 15",
+        "description": "The best smartphone in the world",
+        "price": 199.99,
+        "stock": 12,
+ "category": "smartphone"
+ },
+ {
+    "name": "Samsung Galaxy S23",
+    "description": "The best smartphone in the world",
+    "price": 150.0,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "smartphone"
+  },
+  {
+    "name": "Motorola Edge 40",
+    "description": "The best smartphone in the world",
+    "price": 179.89,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "smartphone"
+  },
+  {
+    "name": "Samsung Odyssey G9",
+    "description": "The best monitor in the world",
+    "price": 299.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "monitor"
+  },
+  {
+    "name": "LG UltraGear",
+    "description": "The best monitor in the world",
+    "price": 199.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "monitor"
+  },
+  {
+    "name": "Acer Predator",
+    "description": "The best monitor in the world",
+    "price": 150.0,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "monitor"
+  },
+  {
+    "name": "Razer BlackWidow V3",
+    "description": "The best keyboard in the world",
+    "price": 99.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "keyboard"
+  },
+  {
+    "name": "Corsair K70",
+    "description": "The best keyboard in the world",
+    "price": 79.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "keyboard"
+  },
+  {
+    "name": "Logitech G Pro",
+    "description": "The best keyboard in the world",
+    "price": 59.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "keyboard"
+  },
+  {
+    "name": "Razer Viper",
+    "description": "The best mouse in the world",
+    "price": 49.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "mouse"
+  },
+  {
+    "name": "Logitech G502 Pro",
+    "description": "The best mouse in the world",
+    "price": 39.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category": "mouse"
+  },
+  {
+    "name": "SteelSeries Rival 3",
+    "description": "The best mouse in the world",
+    "price": 29.99,
+    "stock": 12,
+    "imgUrl": "https://scontent.fmex31-1.fna.fbcdn.net/v/t31.18172-8/24831313_2059993180686932_6941654749482008578_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=zpz2YMJ49dgQ7kNvgHiBFWl&_nc_ht=scontent.fmex31-1.fna&oh=00_AYAFhj92BZqOV0z1CuOT4tDofytdlhjWaJXpMyJdpy60iQ&oe=66CB5EA9",
+    "category":"mouse"
+}
+]
