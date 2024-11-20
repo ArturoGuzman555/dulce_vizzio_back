@@ -1,14 +1,6 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToMany,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import { Categories } from './categories.entity';
-import { OrderDetails } from './orderDetail.entity';
 
 @Entity({ name: 'products' })
 export class Products {
@@ -65,14 +57,8 @@ export class Products {
     description: 'Categoría del producto',
     type: () => Categories,
   })
-  @ManyToOne(() => Categories, (category) => category.products)
-  @JoinColumn({ name: 'category_id' })
-  category: Categories;
-
-  @ApiProperty({
-    description: 'Detalles de las órdenes que contienen este producto',
-    type: () => [OrderDetails],
+  @ManyToOne(() => Categories, (category) => category.products, {
+    onDelete: 'SET NULL',
   })
-  @ManyToMany(() => OrderDetails, (orderDetail) => orderDetail.products)
-  orderDetails: OrderDetails[];
+  category: Categories;
 }

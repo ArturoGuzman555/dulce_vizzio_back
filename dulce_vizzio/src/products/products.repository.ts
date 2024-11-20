@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Categories } from 'src/Entities/categories.entity';
 import { Products } from 'src/Entities/products.entity';
 import { Repository } from 'typeorm';
-import * as data from '../utils/archivo.json';
+import { CreateProductDto } from './products.dto';
 
 @Injectable()
 export class ProductsRepository {
@@ -13,6 +13,25 @@ export class ProductsRepository {
     @InjectRepository(Categories)
     private categoriesRepository: Repository<Categories>,
   ) {}
+
+  async createProduct(createProductDto: CreateProductDto): Promise<Products> {
+    const category = await this.categoriesRepository.findOneBy({
+      id: createProductDto.categoryId,
+    });
+
+    if (!category) {
+      throw new NotFoundException(
+        `Categoría con id ${createProductDto.categoryId} no encontrada`,
+      );
+    }
+
+    const product = this.productsRepository.create({
+      ...createProductDto,
+      category,
+    });
+
+    return this.productsRepository.save(product);
+  }
 
   async getProducts(page: number, limit: number): Promise<Products[]> {
     let products = await this.productsRepository.find({
@@ -27,40 +46,12 @@ export class ProductsRepository {
     return products;
   }
 
-  async getProduct(id: string): Promise<Products | string> {
-    const product = await this.productsRepository.findOneBy({ id });
-    return product ? product : `Producto con id ${id} no encontrado`;
-  }
-
-  async addProduct() {
-    const categories = await this.categoriesRepository.find({
-      relations: ['products'],
+  async getProduct(id: string): Promise<Products> {
+    const product = await this.productsRepository.findOne({
+      where: { id },
+      relations: { category: true },
     });
-
-    data?.map(async (element) => {
-      const category = categories.find(
-        (category) => category.name === element.category,
-      );
-
-      if (category) {
-        const product = new Products();
-        product.name = element.name;
-        product.description = element.description;
-        product.price = element.price;
-        product.imgUrl = element.imgUrl;
-        product.stock = element.stock;
-        product.category = category;
-
-        await this.productsRepository
-          .createQueryBuilder()
-          .insert()
-          .into(Products)
-          .values(product)
-          .orUpdate(['description', 'price', 'imgUrl', 'stock'], ['name'])
-          .execute();
-      }
-    });
-    return 'Productos asignados';
+    return product;
   }
 
   async updateProduct(id: string, product: Products) {

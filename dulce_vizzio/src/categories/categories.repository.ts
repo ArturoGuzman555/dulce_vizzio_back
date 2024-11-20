@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Categories } from 'src/Entities/categories.entity';
 import { Repository } from 'typeorm';
-import * as data from '../utils/archivo.json';
+import { CreateCategoryDto, UpdateCategoryDto } from './categories.dto';
 
 @Injectable()
 export class CategoriesRepository {
@@ -11,25 +11,30 @@ export class CategoriesRepository {
     private categoriesRepository: Repository<Categories>,
   ) {}
 
-  async getCategories() {
+  async createCategory(
+    createCategoryDto: CreateCategoryDto,
+  ): Promise<Categories> {
+    const category = this.categoriesRepository.create(createCategoryDto);
+    return await this.categoriesRepository.save(category);
+  }
+
+  async getCategories(): Promise<Categories[]> {
     return await this.categoriesRepository.find();
   }
 
-  async addCategories() {
-    for (const element of data) {
-      const categoryExists = await this.categoriesRepository.findOne({
-        where: { name: element.category },
-      });
+  async getCategoryById(id: string): Promise<Categories> {
+    return await this.categoriesRepository.findOne({ where: { id } });
+  }
 
-      if (!categoryExists) {
-        await this.categoriesRepository
-          .createQueryBuilder()
-          .insert()
-          .into(Categories)
-          .values({ name: element.category })
-          .execute();
-      }
-    }
-    return 'Categorías agregadas';
+  async updateCategory(
+    id: string,
+    updateCategoryDto: UpdateCategoryDto,
+  ): Promise<Categories> {
+    await this.categoriesRepository.update(id, updateCategoryDto);
+    return this.getCategoryById(id); // Retorna la categoría actualizada
+  }
+
+  async deleteCategory(id: string): Promise<void> {
+    await this.categoriesRepository.delete(id);
   }
 }

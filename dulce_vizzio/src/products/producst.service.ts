@@ -1,19 +1,15 @@
-import {
-  Injectable,
-  NotFoundException,
-  BadRequestException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { ProductsRepository } from './products.repository';
-import { OrdersService } from 'src/orders/orders.service';
-import { Products } from 'src/Entities/products.entity';
+import { CreateProductDto } from './products.dto';
 
 @Injectable()
 export class ProductsService {
   categoriesRepository: any;
-  constructor(
-    private readonly productRepository: ProductsRepository,
-    private readonly orderService: OrdersService,
-  ) {}
+  constructor(private readonly productRepository: ProductsRepository) {}
+
+  async createProduct(createProductDto: CreateProductDto) {
+    return this.productRepository.createProduct(createProductDto);
+  }
 
   async getProducts(page: number, limit: number) {
     const products = await this.productRepository.getProducts(page, limit);
@@ -31,15 +27,6 @@ export class ProductsService {
       throw new NotFoundException(`Producto con id ${id} no encontrado`);
     }
     return product;
-  }
-
-  async addProduct() {
-    try {
-      await this.productRepository.addProduct();
-      return 'Productos agregados exitosamente';
-    } catch (error) {
-      throw new BadRequestException('Error al agregar productos');
-    }
   }
 
   async updateProduct(id: string, product) {

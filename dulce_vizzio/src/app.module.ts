@@ -9,7 +9,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import typeorm from './config/typeorm';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoriesModule } from './categories/categories.module';
-import { OrdersModule } from './orders/orders.module';
+
 import { FileUploadModule } from './file-upload/file-upload.module';
 import { JwtModule } from '@nestjs/jwt';
 
@@ -31,7 +31,6 @@ import { JwtModule } from '@nestjs/jwt';
     UsersModule,
     ProductsModule,
     CategoriesModule,
-    OrdersModule,
     FileUploadModule,
     AuthModule,
   ],

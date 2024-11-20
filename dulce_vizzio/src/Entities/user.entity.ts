@@ -5,8 +5,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Orders } from './orders.entity';
-import { ApiProperty, ApiHideProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({
   name: 'users',
@@ -61,46 +60,9 @@ export class Users {
   })
   phone: number;
 
-  @ApiProperty({
-    description: 'País del usuario',
-    example: 'México',
-  })
-  @Column({
-    type: 'varchar',
-    length: 50,
-  })
-  country: string;
-
-  @ApiProperty({
-    description: 'Ciudad del usuario',
-    example: 'Ciudad de México',
-  })
-  @Column({
-    type: 'varchar',
-    length: 50,
-  })
-  city: string;
-
-  @ApiProperty({
-    description: 'Dirección del usuario',
-    example: 'Av. Reforma 123',
-  })
-  @Column({
-    type: 'varchar',
-    length: 50,
-  })
-  address: string;
-
   @Column({ default: false })
   isAdmin: boolean;
 
-  @ApiProperty({
-    description: 'Lista de pedidos asociados al usuario',
-    type: () => [Orders],
-  })
-  @OneToMany(() => Orders, (order) => order.user)
-  @JoinColumn({ name: 'order_id' })
-  orders: Orders[];
-  user_id: string;
-  order_id: string;
+  @Column({ default: false })
+  isSuperAdmin: boolean;
 }

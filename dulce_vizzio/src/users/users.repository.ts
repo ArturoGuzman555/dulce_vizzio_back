@@ -21,7 +21,6 @@ export class UserRepository {
   async getById(id: string) {
     return this.userRepository.findOne({
       where: { id },
-      relations: { orders: true },
     });
   }
 
