@@ -31,4 +31,4 @@ export class Categories {
   @OneToMany(() => Products, (product) => product.category)
   @JoinColumn()
   products: Products[];
-}
+};
