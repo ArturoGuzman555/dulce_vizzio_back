@@ -69,20 +69,6 @@ export class CreateUserDto {
   confirmPass: string;
 
   /**
-   * Debe ser un string de 3 a 80 caracteres
-   * @example 'Prueba 1'
-   */
-  @ApiProperty({
-    description: 'Debe ser un string de 3 a 80 caracteres.',
-    example: 'Prueba 1',
-  })
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(3)
-  @MaxLength(80)
-  address: string;
-
-  /**
    * Debe ser un número
    * @example 1122334455
    */
@@ -95,37 +81,18 @@ export class CreateUserDto {
   phone: number;
 
   /**
-   * Debe ser un string de 3 a 20 caracteres
-   * @example Peru
+   * Propiedad oculta
    */
-  @ApiProperty({
-    description: 'Debe ser un string de 3 a 20 caracteres.',
-    example: 'Peru',
-  })
-  @IsOptional()
-  @IsString()
-  @Length(3, 20)
-  country?: string;
-
-  /**
-   * Debe ser un string entre 3 y 20 caracteres
-   * @example Cali
-   */
-  @ApiProperty({
-    description: 'Debe ser un string entre 3 y 20 caracteres.',
-    example: 'Cali',
-  })
-  @IsOptional()
-  @IsString()
-  @Length(3, 20)
-  city?: string;
+  @ApiHideProperty()
+  @IsEmpty()
+  isAdmin?: boolean;
 
   /**
    * Propiedad oculta
    */
   @ApiHideProperty()
   @IsEmpty()
-  isAdmin?: boolean;
+  isSuperAdmin?: boolean;
 }
 
 export class LoginUserDto extends PickType(CreateUserDto, [

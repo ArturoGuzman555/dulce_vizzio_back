@@ -15,20 +15,27 @@ export class ProductsRepository {
   ) {}
 
   async createProduct(createProductDto: CreateProductDto): Promise<Products> {
-    const category = await this.categoriesRepository.findOneBy({
-      id: createProductDto.categoryId,
+    const existingProduct = await this.productsRepository.findOneBy({
+      name: createProductDto.name,
     });
 
-    if (!category) {
-      throw new NotFoundException(
-        `Categoría con id ${createProductDto.categoryId} no encontrada`,
+    if (existingProduct) {
+      throw new Error(
+        `El producto con nombre "${createProductDto.name}" ya existe.`,
       );
     }
 
+  
+    const category = await this.categoriesRepository.findOneBy({
+      name: createProductDto.categoryName,
+    });
+
+  
     const product = this.productsRepository.create({
       ...createProductDto,
-      category,
+      category: category || null,
     });
+
 
     return this.productsRepository.save(product);
   }

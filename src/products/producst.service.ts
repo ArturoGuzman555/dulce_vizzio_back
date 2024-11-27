@@ -7,8 +7,16 @@ export class ProductsService {
   categoriesRepository: any;
   constructor(private readonly productRepository: ProductsRepository) {}
 
+  // Servicio: products.service.ts
   async createProduct(createProductDto: CreateProductDto) {
-    return this.productRepository.createProduct(createProductDto);
+    try {
+      return await this.productRepository.createProduct(createProductDto);
+    } catch (error) {
+      if (error.message.includes('ya existe')) {
+        throw new Error('Ya existe un producto con este nombre.');
+      }
+      throw error;
+    }
   }
 
   async getProducts(page: number, limit: number) {

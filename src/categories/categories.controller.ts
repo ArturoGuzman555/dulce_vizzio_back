@@ -83,7 +83,7 @@ export class CategoriesController {
   }
 
   @Delete(':id')
-  @Roles(Role.SuperAdmin) // Solo para SuperAdmin
+  @Roles(Role.SuperAdmin)
   @ApiOperation({ summary: 'Eliminar una categoría' })
   @ApiResponse({
     status: 200,

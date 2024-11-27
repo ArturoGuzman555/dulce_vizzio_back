@@ -23,11 +23,14 @@ export class AuthService {
       id: user.id,
       email: user.email,
       isAdmin: user.isAdmin,
+      isSuperAdmin: user.isSuperAdmin,
     };
     const token = this.jwtService.sign(payload);
     return {
       message: 'Usuario loggeado',
       token,
+      isAdmin: user.isAdmin ? true : false,
+      isSuperAdmin: user.isSuperAdmin ? true : false,
     };
   }
 

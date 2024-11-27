@@ -58,6 +58,7 @@ export class Products {
     type: () => Categories,
   })
   @ManyToOne(() => Categories, (category) => category.products, {
+    nullable: true,
     onDelete: 'SET NULL',
   })
   category: Categories;

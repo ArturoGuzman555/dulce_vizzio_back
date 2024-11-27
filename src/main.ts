@@ -10,8 +10,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const options = new DocumentBuilder()
-    .setTitle('NEST JS API - Ecommerce')
-    .setDescription('Proyecto de especialidad backend')
+    .setTitle('NEST JS API - Dulce Vizzio')
+    .setDescription('Web site Dulce vizzio')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

@@ -1,10 +1,4 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({
@@ -63,6 +57,6 @@ export class Users {
   @Column({ default: false })
   isAdmin: boolean;
 
-  @Column({ default: false })
+  @Column({ default: true })
   isSuperAdmin: boolean;
 }
