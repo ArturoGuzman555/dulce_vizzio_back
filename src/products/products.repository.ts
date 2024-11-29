@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Categories } from 'src/Entities/categories.entity';
 import { Products } from 'src/Entities/products.entity';
@@ -25,17 +25,14 @@ export class ProductsRepository {
       );
     }
 
-  
     const category = await this.categoriesRepository.findOneBy({
       name: createProductDto.categoryName,
     });
 
-  
     const product = this.productsRepository.create({
       ...createProductDto,
       category: category || null,
     });
-
 
     return this.productsRepository.save(product);
   }

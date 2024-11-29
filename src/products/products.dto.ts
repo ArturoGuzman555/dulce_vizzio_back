@@ -33,7 +33,7 @@ export class CreateProductDto {
     example: 'https://example.com/image.jpg',
     description: 'URL de la imagen del producto',
   })
-  imageUrl: string;
+  imgUrl: string;
 
   @IsNotEmpty()
   @IsNumber()

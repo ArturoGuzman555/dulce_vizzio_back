@@ -49,7 +49,7 @@ export class Products {
   @Column({
     type: 'varchar',
     default:
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fstock-photo%2Favailable-now-round-green-sticker.html&psig=AOvVaw38W5kcJTgx59jdBgDJkpdF&ust=1724213331653000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDhqazZgogDFQAAAAAdAAAAABAE',
+      'https://res-console.cloudinary.com/dytdzrpgq/thumbnails/v1/image/upload/v1731438689/cmVhY3RfbGtmZzhu/drilldown',
   })
   imgUrl: string;
 
